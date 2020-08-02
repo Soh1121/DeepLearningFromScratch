@@ -1,3 +1,5 @@
 sample/
 .python-version
 __pycache__/
+dataset/
+mnist.pkl
