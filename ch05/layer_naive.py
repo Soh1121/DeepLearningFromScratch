@@ -17,24 +17,17 @@ class MulLayer:
         return dx, dy
 
 
-if __name__ == "__main__":
-    apple = 100
-    apple_num = 2
-    tax = 1.1
+class AddLayer:
+    def __init__(self):
+        pass
 
-    # layer
-    mul_apple_layer = MulLayer()
-    mul_tax_layer = MulLayer()
+    def forward(self, x, y):
+        out = x + y
 
-    # forward
-    apple_price = mul_apple_layer.forward(apple, apple_num)
-    price = mul_tax_layer.forward(apple_price, tax)
+        return out
 
-    print(price)
+    def backward(self, dout):
+        dx = dout * 1
+        dy = dout * 1
 
-    # backward
-    dprice = 1
-    dapple_price, dtax = mul_tax_layer.backward(dprice)
-    dapple, dapple_num = mul_apple_layer.backward(dapple_price)
-
-    print(dapple, dapple_num, dtax)
+        return dx, dy
