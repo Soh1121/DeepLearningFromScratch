@@ -1,4 +1,5 @@
 sample/
+.vscode/
 .python-version
 __pycache__/
 dataset/
