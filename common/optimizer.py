@@ -85,3 +85,21 @@ class Adam:
             # unbias_m += (1 - self.beta1) * (grads[key] - self.m[key]) # correct bias
             # unbisa_b += (1 - self.beta2) * (grads[key]*grads[key] - self.v[key]) # correct bias
             # params[key] += self.lr * unbias_m / (np.sqrt(unbisa_b) + 1e-7)
+
+class Nesterov:
+
+    """Nesterov's Accelerated Gradient (http://arxiv.org/abs/1212.0901)"""
+
+    def __init__(self, lr=0.01, momentum=0.9):
+        self.lr = lr
+        self.momentum = momentum
+        self.v = None
+
+class RMSprop:
+
+    """RMSprop"""
+
+    def __init__(self, lr=0.01, decay_rate = 0.99):
+        self.lr = lr
+        self.decay_rate = decay_rate
+        self.h = None
