@@ -2,7 +2,7 @@ import sys
 import os
 sys.path.append(os.pardir)  # 親ディレクトリのファイルをインポートするための設定
 import numpy as np
-from common.layers import Sigmoid, Relu, Affine, BatchNormalization
+from common.layers import Sigmoid, Relu, Affine, BatchNormalization, Dropout, SoftmaxWithLoss
 from collections import OrderedDict
 
 
