@@ -73,8 +73,12 @@ class Trainer:
             if self.verbose: print("=== epoch:" + str(self.current_epoch) + ", train acc:" + str(train_acc) + ", test acc:" + str(test_acc) + " ===")
         self.current_iter += 1
 
-
-
     def train(self):
         for i in range(self.max_iter):
             self.train_step()
+
+        test_acc = self.network.accuracy(self.x_test, self.t_test)
+
+        if self.verbose:
+            print("=============== Final Test Accuracy ===============")
+            print("test acc:" + str(test_acc))
